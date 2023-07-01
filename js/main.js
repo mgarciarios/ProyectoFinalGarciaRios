@@ -31,10 +31,8 @@ function activarBotonesAgregar() {
             boton.addEventListener("click", (ev) => {
                 const promocionElegida = arrayDestinos.find((promocion) => promocion.codigo === parseInt(ev.target.id))
                 carritoDestinos.push(promocionElegida);
-
                 localStorage.setItem("carrito", JSON.stringify(carritoDestinos))
-                //console.clear()
-                //console.table(carritoDestinos)
+                
             })        
         }
 }

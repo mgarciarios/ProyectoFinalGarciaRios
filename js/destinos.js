@@ -8,7 +8,7 @@ function recuperarInformacionLocalStorage() {
     
 }
 
-let carritoDestinos = recuperarInformacionLocalStorage()
+let carritoDestinos = []
 
 let arrayDestinos = [
     {
