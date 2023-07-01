@@ -1,4 +1,76 @@
-/*HEADER */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+            /*HEADER */
+
+/* HEADER > section: .header-top */
+.header-top{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    background: #222222;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    color: #F3F3F3;
+    display: flex;
+    justify-content: space-between ;
+}
+
+    .header-top_p{
+      padding-left: 20px;
+    }
+
+
+    .header-top_nav > ul{
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 20px;
+        width: 120px;
+   
+    }
+
+/* HEADER > section: .header-menu */
+
+.header-menu{
+    background-color: #F0A83E;
+    color: #FFFFFF;
+    height: 62px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .header-menu__catdog-front{
+        height: 23px;
+        font-weight: 700;
+        font-size: 20px;
+        font-style: normal;
+        color: #3C2313;
+        margin-left: 40px;
+    }
+        .header-menu__catdog-span {
+            color: #FFFFFF;
+        }
+
+    .header-menu__catdog-menu__ul {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 13px;
+        list-style-type: none;
+        width: 350px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    
 img.carrito {
     display: inline;
     width: 48px;
