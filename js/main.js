@@ -1,7 +1,6 @@
 const imgCarrito = document.querySelector("img.carrito#carrito")
 imgCarrito.src ="imagenes/carrito.png"
 
-
 const imgDestino = document.querySelector("img#imgDestino")
 
 const contenedorDeDestinos = document.querySelector("section#contenedor-destinos.contenedor-destinos")
@@ -32,7 +31,7 @@ function activarBotonesAgregar() {
                 const promocionElegida = arrayDestinos.find((promocion) => promocion.codigo === parseInt(ev.target.id))
                 carritoDestinos.push(promocionElegida);
                 localStorage.setItem("carrito", JSON.stringify(carritoDestinos))
-                
+
             })        
         }
 }
