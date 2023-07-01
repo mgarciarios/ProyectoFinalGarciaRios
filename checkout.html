@@ -8,9 +8,56 @@
     <script defer src="js/main.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="js/destinos.js"></script>
-    <script src="js/destinos.js"></script>
+    <script src="js/checkout.js"></script>
 </head>
 <body>
+    <header>
+        <section class="header-top">
+            <p class="header-top_p">Grandes ofertas en vuelos y hoteles</p>
+            <nav class="header-top_nav">
+                <ul>
+                    <li class="header-top_nav-idioma">Español</li>
+                    <li class="header-top_nav-moneda">ARS$</li>
+                </ul>
+            </nav>
+        </section>
 
+        <section class="header-button">
+            <div>
+                <h1 class="header-menu_h1">Bienvenido a FlyArgentina</h1>
+            </div>
+            <nav class="header-menu"> 
+                <ul class="header-menu__ul">
+                    <li><a href="">Quienes somos</a></li>
+                    <li><a href="">Destinos</a></li>
+                    <li><a href="">Métodos de pago</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <main>
+        <p>Selecciona tu(s) producto(s) de interés. Guárdalos en el Carrito o en tus Favoritos.</p>
+
+        <input type="search" id="inputSearch" placeholder="🔍 Nombre del destino a buscar">
+        <div class="toast-msg"></div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Destino</th>
+                    <th>Importe</th>
+                    <th>Quitar</th>
+                </tr>
+            </thead>
+            
+            <tbody></tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p class="footer-derechos">Todos los derechos reservados a FlyArgentina</p>
+    </footer>
 </body>
 </html>

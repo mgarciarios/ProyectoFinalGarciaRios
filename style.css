@@ -37,8 +37,8 @@
 
 /* HEADER > section: .header-menu */
 
-.header-menu{
-    background-color: #F0A83E;
+.header-button{
+    background-color: #eb72d9;
     color: #FFFFFF;
     height: 62px;
     width: 100%;
@@ -47,7 +47,7 @@
     align-items: center;
 }
 
-    .header-menu__catdog-front{
+    .header-button-h1{
         height: 23px;
         font-weight: 700;
         font-size: 20px;
@@ -55,11 +55,8 @@
         color: #3C2313;
         margin-left: 40px;
     }
-        .header-menu__catdog-span {
-            color: #FFFFFF;
-        }
 
-    .header-menu__catdog-menu__ul {
+    .header-menu__ul {
         font-weight: 400;
         font-style: normal;
         font-size: 13px;
@@ -78,30 +75,64 @@ img.carrito {
 }
 
 /* BODY */
-article.article-destino{
-    height: 600px;
-    width: 300px;
-    border-radius: 20px 20px 0px 0px;
-    background-color: #F3F3F3;
-    box-shadow: 0px 4px 3px rgb(205, 204, 204);
-    margin: 60px 0px;
+main{
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    position: relative;
-    text-align: center;
 }
 
-div.imagen{
+.contenedor-textoImg{
+    width: 100%;
+    margin: 30px 0px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
+.destacados-textoImg_div-img{
+    height: 60px;
+}
+.destacados-textoImg_div-p{
+    font-size: 35px;
+    font-weight: 700;
+    color: #3C2313;
+}
+
+.contenedor-destinos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+article.article-destino{
+    height: 320px;
+    width: 270px;
+    background-color: #FBFAF6;
+    text-align: center;            
+    margin: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div.imagen>img{
+    width: 100%;
+    height: 150px;
+}
+
 div.nombre{
     font-size: 18px;
 }
 
 div.importe {
-    font-size: 16px;
-    font-weight: 700;
+    color: #3C2313;
+    font-size: 15px;
+    font-weight: 500;
+}
+div.descripcion{
+    color:#F0A83E;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 button {
@@ -111,3 +142,22 @@ button {
 }
 
 /* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9f0095;
+    height: 40px;
+
+}
+
+    .footer-derechos{   
+        color: #F3F3F3;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
