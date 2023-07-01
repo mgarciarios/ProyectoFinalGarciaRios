@@ -1,4 +1,4 @@
-class Destino {
+/*class Destino {
     constructor(codigo, lugar, precio) {
         this.codigo = parseInt(codigo);
         this.lugar = lugar;
@@ -52,7 +52,55 @@ if ((ingresarCuotas>=1) && (ingresarCuotas<=36)){
         else {
             alert("¡" + ingresarNombre.trim() + " GRACIAS POR VISITAR LA PÁGINA WEB DE FlyArgentina!");
         }
-    }
+    } else if(ingresarCuotas === 0 || ingresarCuotas === undefined){
+    alert(ingresarNombre.trim() + " NO PUEDE REALIZAR UN PAGO MENOR A UNA CUOTA.");
+}
 else{
     alert(ingresarNombre.trim() + " HAS SUPERADO EL TOTAL DE CUOTAS POSIBLES.");
 }
+*/
+
+// nueva data
+
+const imgCarrito = document.querySelector("img.carrito#carrito")
+imgCarrito.src ="imagenes/carrito.png"
+
+const imgDestino = document.querySelector("img#imgDestino")
+
+
+const contenedorDeDestinos = document.querySelector("section#contenedor-destinos.contenedor-destinos")
+
+function retornoArticleDestino(destino) {
+    return `<article class="article-destino" id=article-destino>
+            <div class="imagen"><img src="" id="imgDestino">${destino.imagen}</div>
+            <div class="nombre"><h3>${destino.paquete}</h3></div>
+            <div class="importe"><h5>${destino.descripcion}</h5></div>
+            <div class="importe"><p>${destino.importe}</p></div>
+            <div class="comprar"><button id="botonAgregar${destino.id}" class="boton-agregar">Agregar</button></div>
+        </article>`
+}
+
+const cargarDestinos = () => {
+    contenedorDeDestinos.innerHTML = "";
+    arrayDestinos.forEach((destino) => {
+        contenedorDeDestinos.innerHTML += retornoArticleDestino(destino);
+    })
+    activarBotonesAgregar()
+}
+cargarDestinos()
+
+function activarBotonesAgregar() {
+    const botonesAgregar = document.querySelectorAll("button.boton-agregar");
+        for (const botonAgrear of botonesAgregar) {
+            botonAgrear.addEventListener("click", () => {
+                console.log("click")
+            }
+            ) 
+                
+            }
+        }
+
+
+imgCarrito.addEventListener("click", ()=>{
+    location.href = "chechout.html"
+})
