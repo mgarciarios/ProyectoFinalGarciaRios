@@ -1,7 +1,7 @@
-const tableBody = document.querySelector('tbody')
+const tableBody = document.querySelector('tbody#carrito-destinos')
 const inputSearch = document.querySelector('input#inputSearch')
 
-const armarFilaDestinos = (carritoDestinos)=> {
+function armarFilaDestinos(carritoDestinos){
     return `<tr>
                 <td class="class-table-number">${carritoDestinos.codigo}</td>
                 <td>${carritoDestinos.paquete}</td>
@@ -10,16 +10,24 @@ const armarFilaDestinos = (carritoDestinos)=> {
             </tr>`
 }
 
-if (carritoDestinos.length > 0) {
-    carritoDestinos.forEach(carritoDestinos => {
-        tableBody.innerHTML += armarFilaDestinos(carritoDestinos)
-    });
-}
-
-
-function filtrarProductos() {
-    let arrayResultante = arrayDestinos.filter((destino) => destino.paquete.includes(inputSearch.value.trim()))
-    if (arrayResultante.length > 0) {
-        cargarDestinos(arrayResultante)
+function armadoDeCheckout(destinos){
+    tableBody.innerHTML = " "
+    if (destinos.length > 0) {
+        destinos.forEach(destino => {
+            tableBody.innerHTML += armarFilaDestinos(destino)
+        });
     }
 }
+
+
+function filtrarDestinos() {
+    let arrayResultante = carritoDestinos.filter((destino)=> destino.paquete.toLowerCase().includes(inputSearch.value.trim().toLowerCase()))
+    if (arrayResultante.length > 0){
+        armadoDeCheckout(arrayResultante)
+    }
+
+}
+
+inputSearch.addEventListener("search",filtrarDestinos())
+
+armadoDeCheckout(carritoDestinos)

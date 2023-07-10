@@ -15,14 +15,14 @@ function retornoArticleDestino(destino) {
             </article>`
 }
 
-function cargarDestinos() {
+function cargarDestinos(destinos) {
     contenedorDeDestinos.innerHTML = "";
-    arrayDestinos.forEach((destino) => {
+    destinos.forEach((destino) => {
         contenedorDeDestinos.innerHTML += retornoArticleDestino(destino);
     })
     activarBotonesAgregar()
 }
-cargarDestinos()
+cargarDestinos(arrayDestinos)
 
 function activarBotonesAgregar() {
     const botonesAgregar = document.querySelectorAll("button.boton-agregar");
