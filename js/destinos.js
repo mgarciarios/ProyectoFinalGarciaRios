@@ -4,8 +4,6 @@ function recuperarInformacionLocalStorage() {
     }else{
         return []
     }
-    
-    
 }
 
 let carritoDestinos = recuperarInformacionLocalStorage()

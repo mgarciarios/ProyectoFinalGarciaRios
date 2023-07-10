@@ -15,3 +15,11 @@ if (carritoDestinos.length > 0) {
         tableBody.innerHTML += armarFilaDestinos(carritoDestinos)
     });
 }
+
+
+function filtrarProductos() {
+    let arrayResultante = arrayDestinos.filter((destino) => destino.paquete.includes(inputSearch.value.trim()))
+    if (arrayResultante.length > 0) {
+        cargarDestinos(arrayResultante)
+    }
+}
