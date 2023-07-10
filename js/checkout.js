@@ -19,7 +19,6 @@ function armadoDeCheckout(destinos){
     }
 }
 
-
 function filtrarDestinos() {
     let arrayResultante = carritoDestinos.filter((destino)=> destino.paquete.toLowerCase().includes(inputSearch.value.trim().toLowerCase()))
     if (arrayResultante.length > 0){
