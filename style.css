@@ -74,6 +74,12 @@ img.carrito {
     float: right;
 }
 
+img.flecha{
+    display: inline;
+    width: 48px;
+    float: right;    
+}
+
 /* BODY */
 main{
     display: flex;

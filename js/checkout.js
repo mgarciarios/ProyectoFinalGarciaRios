@@ -1,3 +1,9 @@
+const imgFlecha = document.querySelector("img.flecha#flecha");
+imgFlecha.src ="imagenes/flecha.png";
+imgFlecha.addEventListener("click", ()=>{
+    location.href = "index.html";
+})
+
 const tableBody = document.querySelector("tbody#carrito-destinos")
 
 function armarFilaDestinos(carritoDestinos){
@@ -18,7 +24,9 @@ function armadoDeCheckout(destinos){
 }
 armadoDeCheckout(carritoDestinos)
 
+const selectPasajeros
 
+/*
 function quitarDestinosCheckout() {
     const btnQuitar = document.querySelectorAll("button.button-heart-emoji");
     for (const boton of btnQuitar) {
@@ -34,4 +42,4 @@ function quitarDestinosCheckout() {
     btnQuitar.addEventListener("click", quitarDestinosCheckout);
 }
 quitarDestinosCheckout()
-
+*/

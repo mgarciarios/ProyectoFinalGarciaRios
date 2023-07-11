@@ -1,7 +1,7 @@
 const imgCarrito = document.querySelector("img.carrito#carrito");
 imgCarrito.src ="imagenes/carrito.png";
 imgCarrito.addEventListener("click", ()=>{
-    location.href = "chechout.html";
+    location.href = "checkout.html";
 })
 
 const imgDestino = document.querySelector("img#imgDestino");

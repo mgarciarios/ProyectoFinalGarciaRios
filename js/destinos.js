@@ -44,3 +44,6 @@ let arrayDestinos = [
     descripcion: "Te recomendamos esta oferta imperdible hacia San Miguel de Tucumán. Incluye los vuelos de ida y vuelta, y el hospedaje por 6 noches en el hotel Garden Plaza, ubicado a 287 metros del centro. Costo valido por pasajero.",
     importe: 169000
 }]
+
+
+const impuesto = 12.3
