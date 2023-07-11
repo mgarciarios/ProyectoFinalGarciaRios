@@ -38,20 +38,23 @@
     </header>
 
     <main>
-        <input type="search" id="inputSearch" placeholder="🔍 Nombre del destino a buscar">
-        <div class="toast-msg"></div>
-
+        <section>
+            <h3>Ingresá tus datos para poder comprar tus paquetes favoritos</h3>
+            <input id="nombrePasajero" type="text">
+            <button id="botonNombrePasajero">CONFIRMAR</button>
+        </section>
+        
         <table>
             <thead>
                 <tr>
-                    <th>Código</th>
                     <th>Destino</th>
                     <th>Importe</th>
                     <th>Quitar</th>
                 </tr>
             </thead>
             
-            <tbody id="carrito-destinos"></tbody>
+            <tbody id="carrito-destinos">
+            </tbody>
         </table>
     </main>
 
