@@ -38,8 +38,6 @@ function activarBotonesAgregar() {
         }
 }
 
-//armar todo en una función ?
-
 const inputSearch = document.querySelector("input#inputSearch");
 
 function filtrarDestinos() {
@@ -47,8 +45,10 @@ function filtrarDestinos() {
     if (arrayResultante.length > 0){
         cargarDestinos(arrayResultante);
     }
+    inputSearch.addEventListener("input", filtrarDestinos);
 }
-inputSearch.addEventListener("input", filtrarDestinos);
+filtrarDestinos();
+
 
 
 

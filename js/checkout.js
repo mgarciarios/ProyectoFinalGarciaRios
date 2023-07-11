@@ -1,10 +1,10 @@
-const imgFlecha = document.querySelector("img.flecha#flecha");
-imgFlecha.src ="imagenes/flecha.png";
+const imgFlecha = document.querySelector("img.flecha");
+imgFlecha.src = "imagenes/flecha.png";
 imgFlecha.addEventListener("click", ()=>{
     location.href = "index.html";
 })
 
-const tableBody = document.querySelector("tbody#carrito-destinos")
+const tableBody = document.querySelector("tbody#carrito-destinos");
 
 function armarFilaDestinos(carritoDestinos){
     return `<tr>
@@ -15,18 +15,35 @@ function armarFilaDestinos(carritoDestinos){
 }
 
 function armadoDeCheckout(destinos){
-    tableBody.innerHTML = " "
+    tableBody.innerHTML = " ";
     if (destinos.length > 0) {
         destinos.forEach(destino => {
-            tableBody.innerHTML += armarFilaDestinos(destino)
+            tableBody.innerHTML += armarFilaDestinos(destino);
         });
     }
 }
-armadoDeCheckout(carritoDestinos)
+armadoDeCheckout(carritoDestinos);
 
-const selectPasajeros
+const tableFoot = document.querySelector("tfoot#total-a-pagar");
 
-/*
+function armadoDeTotalAPagar(carritoDestinos) {
+    let totalAPagar = 0;
+    if (carritoDestinos.length > 0) {
+        carritoDestinos.forEach(destino => {
+            totalAPagar += destino.importe ;
+        });
+    return `
+        <tr>
+            <td>TOTAL</td>
+            <td>$ ${totalAPagar}</td>            
+        </tr>`} 
+    else {
+    return `<p> Cuando realices tu compra verás aqui los destinos y su total </p>`
+    }
+
+}
+tableFoot.innerHTML = armadoDeTotalAPagar(carritoDestinos);
+
 function quitarDestinosCheckout() {
     const btnQuitar = document.querySelectorAll("button.button-heart-emoji");
     for (const boton of btnQuitar) {
@@ -42,4 +59,4 @@ function quitarDestinosCheckout() {
     btnQuitar.addEventListener("click", quitarDestinosCheckout);
 }
 quitarDestinosCheckout()
-*/
+
