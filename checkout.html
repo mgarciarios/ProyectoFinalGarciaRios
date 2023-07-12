@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlyArgentina</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="js/main.js"></script>
     <script src="js/destinos.js"></script>
+    <script defer src="js/main.js"></script>
     <script defer src="js/checkout.js"></script>
-    
 </head>
 <body>
     <header>
@@ -25,13 +24,10 @@
 
         <section class="header-button">
             <div>
-                <h1 class="header-menu_h1">Bienvenido a FlyArgentina</h1>
+                <h1 class="header-menu_h1">Checkout de FlyArgentina</h1>
             </div>
             <nav class="header-menu"> 
                 <ul class="header-menu__ul">
-                    <li><a href="">Quienes somos</a></li>
-                    <li><a href="">Destinos</a></li>
-                    <li><a href="">Métodos de pago</a></li>
                     <li><img src="" class="flecha" id="flecha"></li>
                 </ul>
             </nav>
@@ -39,32 +35,27 @@
     </header>
 
     <main>
-        <section>
-            <h3>Ingresá tus datos para poder comprar tus paquetes favoritos</h3>
-            <input id="nombrePasajero" type="text">
-            <button id="botonNombrePasajero">CONFIRMAR</button>
 
-            <label for="pasajeros">Selecciona la cantidad de viajeros para ese paquete</label>
-            <select name="pasajeros" id="">
-                <option selected >...</option>
-            </select>
+            <h3>Acá encontrarás tus destinos favoritos...</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Destino</th>
+                        <th>Importe</th>
+                        <th>Quitar</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="carrito-destinos">
+                </tbody>
+                
+                <tfoot id="total-a-pagar">
+                </tfoot>
+            </table>
+
+        <section id="section-pagar">
         </section>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Destino</th>
-                    <th>Importe</th>
-                    <th>Quitar</th>
-                </tr>
-            </thead>
-            
-            <tbody id="carrito-destinos">
-            </tbody>
-            
-            <tfoot id="total-a-pagar">
-            </tfoot>
-        </table>
+
     </main>
 
     <footer>

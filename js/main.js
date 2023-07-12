@@ -6,10 +6,8 @@ imgCarrito.addEventListener("click", ()=>{
 
 const imgDestino = document.querySelector("img#imgDestino");
 
-const contenedorDeDestinos = document.querySelector("section#contenedor-destinos.contenedor-destinos");
-
 function retornoArticleDestino(destino) {
-    return `<article class="article-destino" id=article-destino>
+    return `<article class="article-destino" id="article-destino">
                 <div class="imagen"><img src="${destino.imagen}" id="imgDestino"></div>
                 <div class="nombre"><h3>${destino.paquete}</h3></div>
                 <div class="importe"><h5>${destino.descripcion}</h5></div>
@@ -17,6 +15,8 @@ function retornoArticleDestino(destino) {
                 <div class="comprar"><button id="${destino.codigo}" class="boton-agregar">Agregar</button></div>
             </article>`
 }
+
+const contenedorDeDestinos = document.querySelector("section#contenedor-destinos.contenedor-destinos");
 
 function cargarDestinos(destinos) {
     contenedorDeDestinos.innerHTML = "";
@@ -45,13 +45,8 @@ function filtrarDestinos() {
     if (arrayResultante.length > 0){
         cargarDestinos(arrayResultante);
     }
-    inputSearch.addEventListener("input", filtrarDestinos);
 }
-filtrarDestinos();
-
-
-
-
+inputSearch.addEventListener("input", filtrarDestinos);
 
 /*
 const nombrePasajero = document.querySelector("input#nombrePasajero")

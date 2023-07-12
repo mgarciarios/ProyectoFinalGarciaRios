@@ -19,44 +19,58 @@ function armadoDeCheckout(destinos){
     if (destinos.length > 0) {
         destinos.forEach(destino => {
             tableBody.innerHTML += armarFilaDestinos(destino);
-        });
+            const btnQuitar = document.querySelectorAll("button.button-heart-emoji");
+            for (const boton of btnQuitar) {
+                boton.addEventListener("click", (ev) => {
+                    quitarDestinosCheckout(ev)})
+            }    
+                 
+        })
     }
 }
 armadoDeCheckout(carritoDestinos);
 
 const tableFoot = document.querySelector("tfoot#total-a-pagar");
 
-function armadoDeTotalAPagar(carritoDestinos) {
+function quitarDestinosCheckout(ev) {
+    const index = carritoDestinos.findIndex(
+        (promocion) => promocion.codigo === parseInt(ev.target.id));
+    if (index !== -1) {
+        carritoDestinos.splice(index, 1);
+        localStorage.setItem("carrito", JSON.stringify(carritoDestinos));
+        armadoDeCheckout(carritoDestinos);
+        location.reload()   
+    }
+}   
+
+function armadoDeTotalAPagar(destinos) {
     let totalAPagar = 0;
-    if (carritoDestinos.length > 0) {
-        carritoDestinos.forEach(destino => {
-            totalAPagar += destino.importe ;
+    if (destinos.length > 0) {
+        destinos.forEach(destino => {
+            totalAPagar += destino.importe;
+            
         });
-    return `
-        <tr>
-            <td>TOTAL</td>
-            <td>$ ${totalAPagar}</td>            
-        </tr>`} 
+    return ` <tr>
+                <td>TOTAL</td>
+                <td>$ ${totalAPagar}</td>            
+            </tr>`
+        
+        } 
     else {
     return `<p> Cuando realices tu compra verás aqui los destinos y su total </p>`
     }
-
+    
 }
 tableFoot.innerHTML = armadoDeTotalAPagar(carritoDestinos);
 
-function quitarDestinosCheckout() {
-    const btnQuitar = document.querySelectorAll("button.button-heart-emoji");
-    for (const boton of btnQuitar) {
-        boton.addEventListener("click", (ev) => {
-            const index = carritoDestinos.findIndex((promocion) => promocion.codigo === parseInt(ev.target.id));
-            if (index !== -1) {
-                carritoDestinos.splice(index, 1);
-                localStorage.setItem("carrito", JSON.stringify(carritoDestinos));
-                cargarDestinos(carritoDestinos); 
-            }
-        });
-    }
-    btnQuitar.addEventListener("click", quitarDestinosCheckout);
-}
-quitarDestinosCheckout()
+const sectionBtnCompra = document.querySelector("section#section-pagar");
 
+function agregarBtnCompra() {
+    if (carritoDestinos.length > 0){
+        let btnComprar = document.createElement("button");
+            btnComprar.id = "btn-confirmar-compra"
+        btnComprar.innerText = "Confirmar compra"
+        sectionBtnCompra.append(btnComprar)
+    }
+}
+agregarBtnCompra()
