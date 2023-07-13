@@ -47,25 +47,3 @@ function filtrarDestinos() {
     }
 }
 inputSearch.addEventListener("input", filtrarDestinos);
-
-/*
-const nombrePasajero = document.querySelector("input#nombrePasajero")
-const botonNombrePasajero = document.querySelector("button#botonNombrePasajero")
-
-
-//el buscador lo paso a la página principal corte BUSCA TU PROXIMO DESTINO!
-// puedo agregar tipo un loggeo en el checkout, guardarlo en storage y que lo devuela cuando diga cuanto tiene q pagar
-
-
-// meter a estos dos en una funcion
-botonNombrePasajero.addEventListener("click", ()=>{
-    if (nombrePasajero !== ""){
-        localStorage.setItmen("userName", nombrePasajero.value)
-    }
-})
-if(localStorage.getItem("userName")){
-    nombrePasajero.value = localStorage.getItem("userName")
-}
-*/
-
-

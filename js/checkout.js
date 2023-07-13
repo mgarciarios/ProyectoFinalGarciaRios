@@ -65,12 +65,22 @@ tableFoot.innerHTML = armadoDeTotalAPagar(carritoDestinos);
 
 const sectionBtnCompra = document.querySelector("section#section-pagar");
 
-function agregarBtnCompra() {
+function agregarBtnsCompra() {
     if (carritoDestinos.length > 0){
         let btnComprar = document.createElement("button");
             btnComprar.id = "btn-confirmar-compra"
-        btnComprar.innerText = "Confirmar compra"
+            btnComprar.innerText = "Confirmar compra"
         sectionBtnCompra.append(btnComprar)
+        btnComprar.addEventListener("click", mostrarCompraConfirmada)
     }
+    }
+
+agregarBtnsCompra();
+
+function mostrarCompraConfirmada() {
+    tableBody.remove()
+    tableFoot.remove()
+    const cuerpoDelCheckout = document.querySelector("main")
+    cuerpoDelCheckout.innerHTML = "<div><p>Felicidades, pudiste realizar tu compra con éxito!</p></div>"
+    localStorage.clear()
 }
-agregarBtnCompra()
