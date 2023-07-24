@@ -3,20 +3,30 @@ imgCarrito.src ="imagenes/carrito.png";
 imgCarrito.addEventListener("click", ()=>{
     location.href = "checkout.html";
 })
-
-const imgDestino = document.querySelector("img#imgDestino");
+const contenedorDeDestinos = document.querySelector("section#contenedor-destinos.contenedor-destinos");
+const inputSearch = document.querySelector("input#inputSearch");
 
 function retornoArticleDestino(destino) {
     return `<article class="article-destino" id="article-destino">
-                <div class="imagen"><img src="${destino.imagen}" id="imgDestino"></div>
-                <div class="nombre"><h3>${destino.paquete}</h3></div>
-                <div class="importe"><h5>${destino.descripcion}</h5></div>
-                <div class="importe"><p>$${destino.importe}</p></div>
-                <div class="comprar"><button id="${destino.codigo}" class="boton-agregar">Agregar</button></div>
+                <img class="imagen" src="${destino.imagen}" id="imgDestino">
+                <h3 class="nombre">${destino.paquete}</h3>
+                <h5 class="importe">${destino.descripcion}</h5>
+                <p class="importe">$${destino.importe}</p>
+                <button id="${destino.codigo}" class="boton-agregar">Agregar</button>
             </article>`
 }
 
-const contenedorDeDestinos = document.querySelector("section#contenedor-destinos.contenedor-destinos");
+function activarBotonesAgregar() {
+    const botonesAgregar = document.querySelectorAll("button.boton-agregar");
+        for (const boton of botonesAgregar) {
+            boton.addEventListener("click", (ev) => {
+                const promocionElegida = arrayDestinos.find((promocion) => promocion.codigo === parseInt(ev.target.id));
+                carritoDestinos.push(promocionElegida);
+                localStorage.setItem("carrito", JSON.stringify(carritoDestinos));
+                notificarAdquisicion();
+            })        
+        }
+}
 
 function cargarDestinos(destinos) {
     contenedorDeDestinos.innerHTML = "";
@@ -27,23 +37,22 @@ function cargarDestinos(destinos) {
 }
 cargarDestinos(arrayDestinos);
 
-function activarBotonesAgregar() {
-    const botonesAgregar = document.querySelectorAll("button.boton-agregar");
-        for (const boton of botonesAgregar) {
-            boton.addEventListener("click", (ev) => {
-                const promocionElegida = arrayDestinos.find((promocion) => promocion.codigo === parseInt(ev.target.id));
-                carritoDestinos.push(promocionElegida);
-                localStorage.setItem("carrito", JSON.stringify(carritoDestinos));
-            })        
-        }
-}
-
-const inputSearch = document.querySelector("input#inputSearch");
-
 function filtrarDestinos() {
-    let arrayResultante = arrayDestinos.filter((destino)=> destino.paquete.toLowerCase().includes(inputSearch.value.trim().toLowerCase()));
-    if (arrayResultante.length > 0){
+    inputSearch.addEventListener("input", () => {
+        let arrayResultante = arrayDestinos.filter((destino)=> destino.paquete.toLowerCase().includes(inputSearch.value.trim().toLowerCase()));
         cargarDestinos(arrayResultante);
-    }
+    })
 }
-inputSearch.addEventListener("input", filtrarDestinos);
+filtrarDestinos()
+
+function notificarAdquisicion() {
+    Toastify({
+        text: "El paquete se agregó al carrito",
+        duration: 3000,
+        close: true,
+        gravity: "bottom",
+        position: "left",
+        stopOnFocus: true, 
+        style: {background: "linear-gradient(to right, #00b09b, #96c93d)"},
+    }).showToast();
+}

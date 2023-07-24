@@ -1,9 +1,5 @@
 function recuperarInformacionLocalStorage() {
-    if (localStorage.getItem("carrito")) {
-        return JSON.parse(localStorage.getItem("carrito"))
-    }else{
-        return []
-    }
+    return (localStorage.getItem("carrito")) ?  JSON.parse(localStorage.getItem("carrito")) : []
 }
 
 let carritoDestinos = recuperarInformacionLocalStorage()
