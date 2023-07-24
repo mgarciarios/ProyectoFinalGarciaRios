@@ -93,8 +93,8 @@ function consultarCompra() {
         showDenyButton: true,
         showCancelButton: true,
         confirmButtonText: 'Sí',
-        denyButtonText: `No, vaciar el carrito`,
-        cancelButtonText: `Seguir comprando`,
+        denyButtonText: `Vaciar el carrito`,
+        cancelButtonText: `No, seguir comprando`,
     }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire('Su compra se ha realizado con éxito', '', 'success').then(()=>{
