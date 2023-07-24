@@ -62,6 +62,8 @@ function armadoDeTotalAPagar(destinos) {
 tableFoot.innerHTML = armadoDeTotalAPagar(carritoDestinos);
 
 const sectionBtnCompra = document.querySelector("section#section-pagar");
+const animacionImg = "imagenes/animacion-loading.gif"
+
 
 function agregarBtnsCompra() {
     if (carritoDestinos.length > 0){
@@ -69,10 +71,15 @@ function agregarBtnsCompra() {
             btnComprar.id = "btn-confirmar-compra"
             btnComprar.innerText = "Confirmar compra"
         sectionBtnCompra.append(btnComprar);
-        btnComprar.addEventListener("click", consultarCompra);
+        const timer = parseInt(Math.random() * 10000)
+        btnComprar.addEventListener("click", ()=>{
+            btnComprar.innerHTML = `<img src="${animacionImg}" class="img-timer"/>`
+            setTimeout(() => {
+                consultarCompra()
+            }, timer);
+        })
     }
 }
-
 agregarBtnsCompra();
 
 function vaciarCarrito() {
@@ -102,3 +109,5 @@ function consultarCompra() {
         }
       })
 }
+
+//puedo hacer un progress bar de las millas que van sumando (set interval)

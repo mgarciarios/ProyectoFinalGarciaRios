@@ -166,9 +166,20 @@ footer {
     }
 
 
-/* CHECKOUT.HTML */
+/* CHECKOUT.HTML 
+tfoot#total-a-pagar{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}*/
+   
 button#btn-confirmar-compra{
     display: flex;
     align-items: center;
     justify-content:center;
+}
+
+img.img-timer{
+    width: 30px;
 }
