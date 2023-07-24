@@ -117,6 +117,7 @@ article.article-destino{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    text-align: center;
     gap: 10px;
 }
 
@@ -166,13 +167,18 @@ footer {
     }
 
 
-/* CHECKOUT.HTML 
+/* CHECKOUT.HTML */
 tfoot#total-a-pagar{
     height: 50px;
     display: flex;
     align-items: center;
     justify-content:center;
-}*/
+}
+section#section-pagar {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
    
 button#btn-confirmar-compra{
     display: flex;
