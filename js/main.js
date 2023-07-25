@@ -36,6 +36,8 @@ function cargarDestinos(destinos) {
     activarBotonesAgregar();
 }
 
+//ultimas clases
+/*
 function obtenerDestinosFetch() {
     fetch(URL)
         .then((response) => response.json())
@@ -45,6 +47,15 @@ function obtenerDestinosFetch() {
 }
 obtenerDestinosFetch()
 
+async function obtenerDestinosAsync() {
+    const response = await fetch(URL)           //console.log(response)
+    const data = await response.json()
+    arrayDestinos.push(...data)
+    cargarDestinos(arrayDestinos)
+}
+
+*/
+// hasta aca las funciones
 function filtrarDestinos() {
     inputSearch.addEventListener("input", () => {
         let arrayResultante = arrayDestinos.filter((destino)=> destino.paquete.toLowerCase().includes(inputSearch.value.trim().toLowerCase()));
