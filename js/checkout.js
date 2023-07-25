@@ -15,7 +15,7 @@ function armarFilaDestinos(carritoDestinos){
 const tableBody = document.querySelector("tbody#carrito-destinos");
 
 function quitarDestinosCheckout(ev) {
-    const index = carritoDestinos.findIndex((promocion) => promocion.codigo === parseInt(ev.target.id));
+    const index = carritoDestinos.findIndex((promocion) => promocion.codigo === ev.target.id);
     if (index !== -1) {
         carritoDestinos.splice(index, 1);
         localStorage.setItem("carrito", JSON.stringify(carritoDestinos));
@@ -42,7 +42,6 @@ function armadoDeCheckout(destinos){
 armadoDeCheckout(carritoDestinos);
 
 const tableFoot = document.querySelector("tfoot#total-a-pagar");
-
 function armadoDeTotalAPagar(destinos) {
     let totalAPagar = 0;
     if (destinos.length > 0) {
@@ -57,36 +56,16 @@ function armadoDeTotalAPagar(destinos) {
     else {
     return `<p> Cuando realices tu compra verás aqui los destinos y su total </p>`
     }
-}
-
+};
 tableFoot.innerHTML = armadoDeTotalAPagar(carritoDestinos);
 
 const sectionBtnCompra = document.querySelector("section#section-pagar");
 const animacionImg = "imagenes/animacion-loading.gif"
 
-
-function agregarBtnsCompra() {
-    if (carritoDestinos.length > 0){
-        let btnComprar = document.createElement("button");
-            btnComprar.id = "btn-confirmar-compra"
-            btnComprar.innerText = "Confirmar compra"
-        sectionBtnCompra.append(btnComprar);
-        const timer = parseInt(Math.random() * 10000)
-        btnComprar.addEventListener("click", ()=>{
-            btnComprar.innerHTML = `<img src="${animacionImg}" class="img-timer"/>`
-            setTimeout(() => {
-                consultarCompra()
-            }, timer);
-        })
-    }
-}
-agregarBtnsCompra();
-
 function vaciarCarrito() {
     localStorage.clear();
     location.reload();
 }
-
 function consultarCompra() {
     Swal.fire({
         title: '¿Desea confirmar la compra?',
@@ -110,4 +89,19 @@ function consultarCompra() {
       })
 }
 
-//puedo hacer un progress bar de las millas que van sumando (set interval)
+function agregarBtnsCompra() {
+    if (carritoDestinos.length > 0){
+        let btnComprar = document.createElement("button");
+            btnComprar.id = "btn-confirmar-compra"
+            btnComprar.innerText = "Confirmar compra"
+        sectionBtnCompra.append(btnComprar);
+        const timer = parseInt(Math.random() * 10000)
+        btnComprar.addEventListener("click", ()=>{
+            btnComprar.innerHTML = `<img src="${animacionImg}" class="img-timer"/>`
+            setTimeout(() => {
+                consultarCompra()
+            }, timer);
+        })
+    }
+}
+agregarBtnsCompra();
