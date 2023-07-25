@@ -14,7 +14,7 @@ function retornoArticleDestino(destino) {
                 <p class="importe">$${destino.importe}</p>
                 <button id="${destino.codigo}" class="boton-agregar">Agregar</button>
             </article>`
-}
+};
 function notificarAdquisicion() {
     Toastify({
         text: "El paquete se agregó al carrito",
@@ -25,7 +25,7 @@ function notificarAdquisicion() {
         stopOnFocus: true, 
         style: {background: "linear-gradient(to right, #00b09b, #96c93d)"},
     }).showToast();
-}
+};
 
 function activarBotonesAgregar() {
     const botonesAgregar = document.querySelectorAll("button.boton-agregar");
@@ -47,13 +47,13 @@ function cargarDestinos(destinos) {
     activarBotonesAgregar();
 }
 
-async function obtenerDestinosAsync() {
-    const response = await fetch(URL)          
-    const data = await response.json()
-    arrayDestinos.push(...data)
-    cargarDestinos(arrayDestinos)
+async function conseguirDestinosAsync() {
+    const response = await fetch(URL);   
+    const data = await response.json();
+    arrayDestinos.push(...data);
+    cargarDestinos(arrayDestinos);
 }
-obtenerDestinosAsync()
+conseguirDestinosAsync();
 
 function filtrarDestinos() {
     inputSearch.addEventListener("input", () => {
@@ -61,4 +61,4 @@ function filtrarDestinos() {
         cargarDestinos(arrayResultante);
     })
 }
-filtrarDestinos()
+filtrarDestinos();
