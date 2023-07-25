@@ -35,7 +35,7 @@ function cargarDestinos(destinos) {
     })
     activarBotonesAgregar();
 }
-cargarDestinos(arrayDestinos);
+//cargarDestinos(arrayDestinos);
 
 function filtrarDestinos() {
     inputSearch.addEventListener("input", () => {
@@ -55,4 +55,8 @@ function notificarAdquisicion() {
         stopOnFocus: true, 
         style: {background: "linear-gradient(to right, #00b09b, #96c93d)"},
     }).showToast();
+}
+
+function obtenerDestinosFetc() {
+    fetch(URL)
 }

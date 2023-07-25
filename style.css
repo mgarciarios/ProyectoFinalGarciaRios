@@ -167,25 +167,37 @@ footer {
     }
 
 
-/* CHECKOUT.HTML */
+    /* CHECKOUT.HTML */
+/*
+table{
+}
+    table>thead{
+    }
+*/
 tfoot#total-a-pagar{
     height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content:center;
+    
 }
-section#section-pagar {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
+    section#section-pagar {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        height: 80px;
+    }
    
 button#btn-confirmar-compra{
     display: flex;
     align-items: center;
     justify-content:center;
+    background-color: #6d2869b0;
+    color: #F3F3F3;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    padding: 15px;
+    margin: 10px;
 }
 
 img.img-timer{
     width: 30px;
 }
+
