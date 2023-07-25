@@ -160,14 +160,25 @@ button {
     padding: 0px;
 }
 
+
 .sobre-nosotros{
-    background-color: #222222;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content:space-between;
+}
+
+.metodos-de-pago{
     padding: 30px;
     margin: 50px;
     text-align: center;
     display: flex;
-    align-content: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content:space-between;
 }
 
 
@@ -192,16 +203,18 @@ footer {
 
 
     /* CHECKOUT.HTML */
-/*
-table{
-}
-    table>thead{
+    .tabla-checkout>tbody {
+        text-align: center;
     }
-*/
+    .tabla-checkout>tfoot {
+        text-align: center;
+    }
 tfoot#total-a-pagar{
     height: 50px;
-    
+    font-weight: bolder;
+    color: #9f0095;
 }
+
     section#section-pagar {
         display: flex;
         align-content: center;
